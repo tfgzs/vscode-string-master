@@ -1,0 +1,13 @@
+{
+	"string-master.title": "String Tools",
+	"string-master.joinLines.title": "Join Lines",
+	"string-master.deleteBlankLines.title": "Delete Blank Lines",
+	"string-master.trimBlankLines.title": "Trim Blank Lines",
+	"string-master.deleteDuplicateLines.title": "Delete Duplicate Lines",
+	"string-master.sortLinesAsc.title": "Sort lines Asc",
+	"string-master.sortLinesDesc.title": "Sort lines Desc",
+	"string-master.sortLinesRandom.title": "Sort Lines Random",
+	"string-master.lineAddQuoteCommaSeparator.title": "Lines Add Quote Comma Separator",
+	"string-master.lineAddDoubleQuoteCommaSeparator.title": "Lines Add Double Quote Comma Separator",
+	"string-master.lineAddSameCharAtBothEnds.title": "Lines Add Same Char At Both Ends"
+}

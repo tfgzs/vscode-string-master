@@ -1,0 +1,13 @@
+{
+	"string-master.title": "字符串工具",
+	"string-master.joinLines.title": "多行转一行，自定义分隔符",
+	"string-master.deleteBlankLines.title": "删除空行",
+	"string-master.deleteDuplicateLines.title": "删除重复行",
+	"string-master.sortLinesAsc.title": "行排序-升序",
+	"string-master.sortLinesDesc.title": "行排序-倒序",
+	"string-master.sortLinesRandom.title": "行排序-随机",
+	"string-master.lineAddQuoteCommaSeparator.title": "多行转一行，加单引号,逗号分隔",
+	"string-master.lineAddDoubleQuoteCommaSeparator.title": "多行转一行，加双引号,逗号分隔",
+	"string-master.trimBlankLines.title": "行首尾删除空白字符",
+	"string-master.lineAddSameCharAtBothEnds.title": "行首尾增加相同字符"
+}

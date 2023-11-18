@@ -1,0 +1,179 @@
+{
+  "name": "string-master",
+  "displayName": "string-master",
+  "description": "string toolkit",
+  "version": "0.0.1",
+  "publisher": "tfgzs",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "icon": "logo.png",
+  "homepage": "https://github.com/tfgzs/vscode-string-master",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tfgzs/vscode-string-master"
+  },
+  "bugs": {
+    "url": "https://github.com/tfgzs/vscode-string-master/issues"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "string",
+    "string-master",
+    "string-master",
+    "text",
+    "csv",
+    "excel",
+    "json",
+    "sql",
+    "xml",
+    "format",
+    "underscore",
+    "lodash"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "category": "String Master",
+        "title": "%string-master.joinLines.title%",
+        "command": "string-master.joinLines"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.deleteBlankLines.title%",
+        "command": "string-master.deleteBlankLines"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.deleteDuplicateLines.title%",
+        "command": "string-master.deleteDuplicateLines"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.trimBlankLines.title%",
+        "command": "string-master.trimBlankLines"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.sortLinesAsc.title%",
+        "command": "string-master.sortLinesAsc"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.sortLinesDesc.title%",
+        "command": "string-master.sortLinesDesc"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.sortLinesRandom.title%",
+        "command": "string-master.sortLinesRandom"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.lineAddQuoteCommaSeparator.title%",
+        "command": "string-master.lineAddQuoteCommaSeparator"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.lineAddDoubleQuoteCommaSeparator.title%",
+        "command": "string-master.lineAddDoubleQuoteCommaSeparator"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.lineAddSameCharAtBothEnds.title%",
+        "command": "string-master.lineAddSameCharAtBothEnds"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "string-master-menus",
+        "label": "%string-master.title%"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "group": "navigation",
+          "submenu": "string-master-menus"
+        }
+      ],
+      "string-master-menus": [
+        {
+          "title": "%string-master.deleteBlankLines.title%",
+          "group": "1_del_lines",
+          "command": "string-master.deleteBlankLines"
+        },
+        {
+          "title": "%string-master.deleteDuplicateLines.title%",
+          "group": "1_del_lines",
+          "command": "string-master.deleteDuplicateLines"
+        },
+        {
+          "title": "%string-master.sortLinesAsc.title%",
+          "group": "40_sort_lines",
+          "command": "string-master.sortLinesAsc"
+        },
+        {
+          "title": "%string-master.sortLinesDesc.title%",
+          "group": "40_sort_lines",
+          "command": "string-master.sortLinesDesc"
+        },
+        {
+          "title": "%string-master.sortLinesRandom.title%",
+          "group": "40_sort_lines",
+          "command": "string-master.sortLinesRandom"
+        },
+        {
+          "title": "%string-master.joinLines.title%",
+          "group": "30_join_lines",
+          "command": "string-master.joinLines"
+        },
+        {
+          "title": "%string-master.lineAddQuoteCommaSeparator.title%",
+          "group": "30_join_lines",
+          "command": "string-master.lineAddQuoteCommaSeparator"
+        },
+        {
+          "title": "%string-master.lineAddDoubleQuoteCommaSeparator.title%",
+          "group": "30_join_lines",
+          "command": "string-master.lineAddDoubleQuoteCommaSeparator"
+        },
+        {
+          "title": "%string-master.trimBlankLines.title%",
+          "group": "20_fix_lines",
+          "command": "string-master.trimBlankLines"
+        },
+        {
+          "title": "%string-master.lineAddSameCharAtBothEnds.title%",
+          "group": "20_fix_lines",
+          "command": "string-master.lineAddSameCharAtBothEnds"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.52.0",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.10",
+    "lodash": "^4.17.21",
+    "mocha": "^10.2.0",
+    "replace-in-file": "^7.0.2",
+    "typescript": "^5.2.2"
+  }
+}
