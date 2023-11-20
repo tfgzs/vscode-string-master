@@ -6,19 +6,29 @@
 [![](https://vsmarketplacebadges.dev/installs-short/tfgzs.string-master.png)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
 [![](https://vsmarketplacebadges.dev/rating-short/tfgzs.string-master.png)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
 
+<a href="https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master" alt="Marketplace version">
+        <img src="https://img.shields.io/visual-studio-marketplace/v/tfgzs.string-master?label=VS%20Code%20Marketplace" />
+</a>
+<a href="https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master" alt="Marketplace download count">
+    <img src="https://img.shields.io/visual-studio-marketplace/d/tfgzs.string-master?label=Downloads" />
+</a>
+<a href="https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master" alt="Marketplace download count">
+    <img src="https://img.shields.io/visual-studio-marketplace/stars/tfgzs.string-master" />
+</a>
+    
+
 ## 简介
 
 - 字符串处理工具，开发提效必备。
-
-## 使用说明
-
-- 选中要转换的行，右键菜单操作即可
+- 选中要转换的行，右键菜单操作。
 
 ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/1.gif)
 
+- SQL 转换
+
 ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
 
-## 功能介绍
+## 功能列表
 
 - 添加字符
     - 首尾增加自定义字符
