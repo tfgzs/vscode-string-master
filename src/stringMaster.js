@@ -61,7 +61,7 @@ async function trimBlankLines(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
     //删除每行首尾空白字符
-    let newText = oldText.replace(/^\s+|\s+$/gm, '');
+    let newText = _.map(oldText.split('\n'), _.trim).join('\n');
 
     replaceSelectedText(textEditor, newText);
     showInfoMsg('deleteOk');

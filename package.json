@@ -1,7 +1,7 @@
 {
   "name": "string-master",
   "displayName": "string-master",
-  "description": "string toolkit",
+  "description": "string toolkit 字符串转换工具",
   "version": "0.0.1",
   "publisher": "tfgzs",
   "license": "MIT",
@@ -119,6 +119,11 @@
           "command": "string-master.deleteDuplicateLines"
         },
         {
+          "title": "%string-master.trimBlankLines.title%",
+          "group": "1_del_lines",
+          "command": "string-master.trimBlankLines"
+        },
+        {
           "title": "%string-master.sortLinesAsc.title%",
           "group": "40_sort_lines",
           "command": "string-master.sortLinesAsc"
@@ -147,11 +152,6 @@
           "title": "%string-master.lineAddDoubleQuoteCommaSeparator.title%",
           "group": "30_join_lines",
           "command": "string-master.lineAddDoubleQuoteCommaSeparator"
-        },
-        {
-          "title": "%string-master.trimBlankLines.title%",
-          "group": "20_fix_lines",
-          "command": "string-master.trimBlankLines"
         },
         {
           "title": "%string-master.lineAddSameCharAtBothEnds.title%",

@@ -1,6 +1,13 @@
 # string-master 使用说明
 
-字符串工具集
+字符串处理工具
+
+
+[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub license](https://badgen.net/github/license/tfgzs/vscode-string-master)](https://github.com/tfgzs/vscode-string-master/blob/main/LICENSE)&nbsp;&nbsp;[![Visual Studio Code](https://img.shields.io/visual-studio-marketplace/i/tfgzs.string-master)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub stars](https://img.shields.io/github/stars/tfgzs/vscode-string-master.svg?style=social&label=Star)](https://GitHub.com/tfgzs/vscode-string-master/stargazers/)
+
+[![](https://vsmarketplacebadges.dev/version-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
+[![](https://vsmarketplacebadges.dev/installs-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
+[![](https://vsmarketplacebadges.dev/rating-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
 
 ## 功能
 
@@ -13,20 +20,23 @@
 ## 版本说明
 ### 0.0.1
 
-- 删除
+- 添加字符
+    - 首尾增加自定义字符
+
+- 删除字符
     - 删除空行
     - 删除重复行
+    - 删除首尾空白字符
 
-- 修正
-    - 每行的首尾增加自定义字符
-    - 每行首尾移除空白的字符
-
-- 排序
+- 行排序
     - 升序排列
     - 降序排列
     - 随机打乱顺序
 
-- 转换
-    - 多行转成一行，支持自定义分隔符
-    - 多行转成一行，给每行加上双引号，然后用逗号分隔合并成一行
-    - 多行转成一行，给每行加上单引号，然后用逗号分隔合并成一行 （经常拼接 SQL 条件同学应该很喜欢）
+- 行转换
+    - 合并行：多行转成一行，支持自定义分隔符
+    - 合并行：多行转成一行，给每行加上双引号，然后用逗号分隔合并成一行
+    - 合并行：多行转成一行，给每行加上单引号，然后用逗号分隔合并成一行 （经常拼接 SQL 条件同学应该很喜欢）
+
+- SQL工具
+    - Insert SQL 转为 Markdown 表格
