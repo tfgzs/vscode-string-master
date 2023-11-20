@@ -28,6 +28,11 @@
 
 ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
 
+- 多行求和
+
+![多行求和](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/3.gif)
+
+
 ## 功能列表
 
 - 添加字符
@@ -50,3 +55,6 @@
 
 - SQL工具
     - Insert SQL 转为 Markdown 表格
+
+- 数学计算
+    - 多行求和

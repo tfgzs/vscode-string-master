@@ -19,6 +19,7 @@ function activate(context) {
 	registerCommand(context, 'string-master.lineAddDoubleQuoteCommaSeparator', stringMaster.lineAddDoubleQuoteCommaSeparator);
 	registerCommand(context, 'string-master.lineAddSameCharAtBothEnds', stringMaster.lineAddSameCharAtBothEnds);
 	registerCommand(context, 'string-master.insertSqlToMarkdown', stringMaster.insertSqlToMarkdown);
+	registerCommand(context, 'string-master.calcSumMultipleLines', stringMaster.calcSumMultipleLines);
 }
 
 /**

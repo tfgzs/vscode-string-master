@@ -92,6 +92,11 @@
         "category": "String Master",
         "title": "%string-master.insertSqlToMarkdown.title%",
         "command": "string-master.insertSqlToMarkdown"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.calcSumMultipleLines.title%",
+        "command": "string-master.calcSumMultipleLines"
       }
     ],
     "submenus": [
@@ -162,6 +167,11 @@
           "title": "%string-master.insertSqlToMarkdown.title%",
           "group": "50_sql",
           "command": "string-master.insertSqlToMarkdown"
+        },
+        {
+          "title": "%string-master.calcSumMultipleLines.title%",
+          "group": "60_calc",
+          "command": "string-master.calcSumMultipleLines"
         }
       ]
     }

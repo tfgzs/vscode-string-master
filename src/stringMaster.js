@@ -28,6 +28,35 @@ async function insertSqlToMarkdown(textEditor) {
     showInfoMsg('convertOk');
 }
 
+//多行求和
+async function calcSumMultipleLines(textEditor) {
+    //获取选中的多行文本
+    let oldText = textEditor.selections.map(selection => textEditor.document.getText(selection)).reverse().join('\n');
+    //删除空白行
+    let newText = oldText.replace(/^\s*\n/gm, '');
+    //删除每行首尾空白字符
+    newText = _.map(newText.split('\n'), _.trim).join('\n');
+    //把字符串中的换行替换为逗号
+    newText = newText.replace(/\n/g, '+');
+    //计算结果
+    let result = eval(newText);
+    //拼接最后结果
+    newText = newText + '=' + result;
+
+    // 打开一个新的编辑页面（在右侧打开）
+    vscode.workspace.openTextDocument().then((document) => {
+        return vscode.window.showTextDocument(document, { viewColumn: vscode.ViewColumn.Beside });
+    }).then((editor) => {
+        // 把字符写入新的编辑页面
+        editor.edit((editBuilder) => {
+            editBuilder.insert(new vscode.Position(0, 0), newText);
+        });
+    });
+
+    //提示用户执行完成
+    showInfoMsg('calcOk');
+}
+
 //合并行，支持使用自定义字符
 async function joinLines(textEditor) {
     //获取选中的文本
@@ -211,5 +240,6 @@ module.exports = {
     lineAddQuoteCommaSeparator,
     lineAddDoubleQuoteCommaSeparator,
     lineAddSameCharAtBothEnds,
-    insertSqlToMarkdown
+    insertSqlToMarkdown,
+    calcSumMultipleLines
 }
