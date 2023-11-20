@@ -1,24 +1,24 @@
 # string-master 使用说明
 
-字符串处理工具
+[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub license](https://badgen.net/github/license/tfgzs/vscode-string-master)](https://github.com/tfgzs/vscode-string-master/blob/main/LICENSE)&nbsp;&nbsp;[![Visual Studio Code](https://img.shields.io/visual-studio-marketplace/i/tfgzs.string-master)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub stars](https://img.shields.io/github/stars/tfgzs/vscode-string-master.png?style=social&label=Star)](https://GitHub.com/tfgzs/vscode-string-master/stargazers/)
 
+[![](https://vsmarketplacebadges.dev/version-short/tfgzs.string-master.png)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
+[![](https://vsmarketplacebadges.dev/installs-short/tfgzs.string-master.png)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
+[![](https://vsmarketplacebadges.dev/rating-short/tfgzs.string-master.png)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
 
-[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub license](https://badgen.net/github/license/tfgzs/vscode-string-master)](https://github.com/tfgzs/vscode-string-master/blob/main/LICENSE)&nbsp;&nbsp;[![Visual Studio Code](https://img.shields.io/visual-studio-marketplace/i/tfgzs.string-master)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)&nbsp;&nbsp;[![GitHub stars](https://img.shields.io/github/stars/tfgzs/vscode-string-master.svg?style=social&label=Star)](https://GitHub.com/tfgzs/vscode-string-master/stargazers/)
+## 简介
 
-[![](https://vsmarketplacebadges.dev/version-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
-[![](https://vsmarketplacebadges.dev/installs-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
-[![](https://vsmarketplacebadges.dev/rating-short/tfgzs.string-master.svg)](https://marketplace.visualstudio.com/items?itemName=tfgzs.string-master)
+- 字符串处理工具，开发提效必备。
 
-## 功能
+## 使用说明
 
-- 字符串操作工具，开发提效必备。
 - 选中要转换的行，右键菜单操作即可
 
-![Alt text](https://raw.githubusercontent.com/tfgzs/vscode-string-master/main/docs/1.jpg)
+![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/1.gif)
 
+![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
 
-## 版本说明
-### 0.0.1
+## 功能介绍
 
 - 添加字符
     - 首尾增加自定义字符

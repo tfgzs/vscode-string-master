@@ -2,6 +2,10 @@
 
 ## Release Notes
 
+### 0.0.2
+- SQL工具
+    - Insert SQL 转为 Markdown 表格
+
 ### 0.0.1
 
 - 删除

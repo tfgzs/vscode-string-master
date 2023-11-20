@@ -2,7 +2,7 @@
   "name": "string-master",
   "displayName": "string-master",
   "description": "string toolkit 字符串转换工具",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "tfgzs",
   "license": "MIT",
   "engines": {
