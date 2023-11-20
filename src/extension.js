@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const stringTools = require("./stringTools");
+const stringMaster = require("./stringMaster");
 
 /**
  * 您的扩展在第一次执行命令时被激活，当您的扩展被激活时会调用该方法。
@@ -8,16 +8,17 @@ function activate(context) {
 	//此行代码只执行一次
 	console.log('Congratulations, your extension "string-master" is now active!');
 
-	registerCommand(context, 'string-master.joinLines', stringTools.joinLines);
-	registerCommand(context, 'string-master.deleteBlankLines', stringTools.deleteBlankLines);
-	registerCommand(context, 'string-master.trimBlankLines', stringTools.trimBlankLines);
-	registerCommand(context, 'string-master.deleteDuplicateLines', stringTools.deleteDuplicateLines);
-	registerCommand(context, 'string-master.sortLinesAsc', stringTools.sortLinesAsc);
-	registerCommand(context, 'string-master.sortLinesDesc', stringTools.sortLinesDesc);
-	registerCommand(context, 'string-master.sortLinesRandom', stringTools.sortLinesRandom);
-	registerCommand(context, 'string-master.lineAddQuoteCommaSeparator', stringTools.lineAddQuoteCommaSeparator);
-	registerCommand(context, 'string-master.lineAddDoubleQuoteCommaSeparator', stringTools.lineAddDoubleQuoteCommaSeparator);
-	registerCommand(context, 'string-master.lineAddSameCharAtBothEnds', stringTools.lineAddSameCharAtBothEnds);
+	registerCommand(context, 'string-master.joinLines', stringMaster.joinLines);
+	registerCommand(context, 'string-master.deleteBlankLines', stringMaster.deleteBlankLines);
+	registerCommand(context, 'string-master.trimBlankLines', stringMaster.trimBlankLines);
+	registerCommand(context, 'string-master.deleteDuplicateLines', stringMaster.deleteDuplicateLines);
+	registerCommand(context, 'string-master.sortLinesAsc', stringMaster.sortLinesAsc);
+	registerCommand(context, 'string-master.sortLinesDesc', stringMaster.sortLinesDesc);
+	registerCommand(context, 'string-master.sortLinesRandom', stringMaster.sortLinesRandom);
+	registerCommand(context, 'string-master.lineAddQuoteCommaSeparator', stringMaster.lineAddQuoteCommaSeparator);
+	registerCommand(context, 'string-master.lineAddDoubleQuoteCommaSeparator', stringMaster.lineAddDoubleQuoteCommaSeparator);
+	registerCommand(context, 'string-master.lineAddSameCharAtBothEnds', stringMaster.lineAddSameCharAtBothEnds);
+	registerCommand(context, 'string-master.insertSqlToMarkdown', stringMaster.insertSqlToMarkdown);
 }
 
 /**

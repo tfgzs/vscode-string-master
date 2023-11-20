@@ -87,6 +87,11 @@
         "category": "String Master",
         "title": "%string-master.lineAddSameCharAtBothEnds.title%",
         "command": "string-master.lineAddSameCharAtBothEnds"
+      },
+      {
+        "category": "String Master",
+        "title": "%string-master.insertSqlToMarkdown.title%",
+        "command": "string-master.insertSqlToMarkdown"
       }
     ],
     "submenus": [
@@ -152,6 +157,11 @@
           "title": "%string-master.lineAddSameCharAtBothEnds.title%",
           "group": "20_fix_lines",
           "command": "string-master.lineAddSameCharAtBothEnds"
+        },
+        {
+          "title": "%string-master.insertSqlToMarkdown.title%",
+          "group": "50_sql",
+          "command": "string-master.insertSqlToMarkdown"
         }
       ]
     }

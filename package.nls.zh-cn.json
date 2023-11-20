@@ -9,5 +9,6 @@
 	"string-master.lineAddQuoteCommaSeparator.title": "多行转一行，加单引号,逗号分隔",
 	"string-master.lineAddDoubleQuoteCommaSeparator.title": "多行转一行，加双引号,逗号分隔",
 	"string-master.trimBlankLines.title": "行首尾删除空白字符",
-	"string-master.lineAddSameCharAtBothEnds.title": "行首尾增加相同字符"
+	"string-master.lineAddSameCharAtBothEnds.title": "行首尾增加相同字符",
+	"string-master.insertSqlToMarkdown.title": "insert sql 转 markdown 表格"
 }

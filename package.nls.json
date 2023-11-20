@@ -9,5 +9,6 @@
 	"string-master.sortLinesRandom.title": "Sort Lines Random",
 	"string-master.lineAddQuoteCommaSeparator.title": "Lines Add Quote Comma Separator",
 	"string-master.lineAddDoubleQuoteCommaSeparator.title": "Lines Add Double Quote Comma Separator",
-	"string-master.lineAddSameCharAtBothEnds.title": "Lines Add Same Char At Both Ends"
+	"string-master.lineAddSameCharAtBothEnds.title": "Lines Add Same Char At Both Ends",
+	"string-master.insertSqlToMarkdown.title": "Insert Sql To Markdown Table"
 }

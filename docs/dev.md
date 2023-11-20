@@ -20,6 +20,9 @@
 
 ## 常用命令
 ```
+升级 yarn
+npm install -g yarn
+
 新建项目
 yarn init 
 添加依赖

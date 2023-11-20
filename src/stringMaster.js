@@ -2,50 +2,31 @@
 const vscode = require('vscode');
 const _ = require('lodash');
 const i18n = require('./i18n').translation;
-
-//=============================================================================
-//    公共代码
-//=============================================================================
-
-/**
- * 替换选中的文本
- */
-function replaceSelectedText(textEditor, newText) {
-    textEditor.edit((builder) => {
-        //在原来行的后面，换一行后，再插入新的文本
-        // builder.insert(textEditor.selection.end, "\n");
-        // builder.insert(textEditor.selection.end, res);
-        // 替换为新的字符
-        builder.replace(textEditor.selection, newText);
-    });
-}
-
-/**
- * 获取用户输入的分隔符
- */
-async function getUserInputText() {
-    const message = i18n('pleaseUserInputText');
-
-    const separator = await vscode.window.showInputBox({ prompt: message, value: '' });
-    if (!separator) {
-        vscode.window.showErrorMessage(message);
-        return null;
-    }
-    return separator;
-}
-
-/**
- * 普通提示
- */
-function showInfoMsg(messageKey) {
-    const message = i18n(messageKey);
-    vscode.window.showInformationMessage(message);
-}
-
+const sql2md = require('./sql2md');
 
 //=============================================================================
 //    功能代码
 //=============================================================================
+
+async function insertSqlToMarkdown(textEditor) {
+    let oldText = textEditor.document.getText(textEditor.selection);
+
+    let newText = sql2md.insertSqlToMarkdown(oldText);
+
+    // 打开一个新的编辑页面
+    vscode.workspace.openTextDocument().then((document) => {
+        return vscode.window.showTextDocument(document);
+    }).then((editor) => {
+        // 把字符写入新的编辑页面
+        editor.edit((editBuilder) => {
+            editBuilder.insert(new vscode.Position(0, 0), newText);
+        });
+        // 切换预览模式为 Markdown
+        vscode.commands.executeCommand('markdown.showPreviewToSide');
+    });
+
+    showInfoMsg('convertOk');
+}
 
 //合并行，支持使用自定义字符
 async function joinLines(textEditor) {
@@ -61,7 +42,7 @@ async function joinLines(textEditor) {
     //替换选中的文本
     replaceSelectedText(textEditor, newText);
     //提示用户执行完成
-    showInfoMsg('replaceOk');
+    showInfoMsg('convertOk');
 }
 
 
@@ -105,7 +86,7 @@ async function sortLinesAsc(textEditor) {
     let newText = oldText.split('\n').sort().join('\n');
 
     replaceSelectedText(textEditor, newText);
-    showInfoMsg('deleteOk');
+    showInfoMsg('convertOk');
 }
 
 async function sortLinesDesc(textEditor) {
@@ -115,7 +96,7 @@ async function sortLinesDesc(textEditor) {
     let newText = oldText.split('\n').reverse().join('\n');
 
     replaceSelectedText(textEditor, newText);
-    showInfoMsg('deleteOk');
+    showInfoMsg('convertOk');
 }
 
 async function sortLinesRandom(textEditor) {
@@ -126,7 +107,7 @@ async function sortLinesRandom(textEditor) {
     const newText = shuffledLines.join('\n'); // 将打乱顺序的数组按行组合成文本
 
     replaceSelectedText(textEditor, newText);
-    showInfoMsg('replaceOk');
+    showInfoMsg('convertOk');
 }
 
 async function lineAddQuoteCommaSeparator(textEditor) {
@@ -139,7 +120,7 @@ async function lineAddQuoteCommaSeparator(textEditor) {
     const newText = quotedText.replace(/\n/g, ',');
 
     replaceSelectedText(textEditor, newText);
-    showInfoMsg('replaceOk');
+    showInfoMsg('convertOk');
 }
 
 async function lineAddDoubleQuoteCommaSeparator(textEditor) {
@@ -152,7 +133,7 @@ async function lineAddDoubleQuoteCommaSeparator(textEditor) {
     const newText = quotedText.replace(/\n/g, ',');
     replaceSelectedText(textEditor, newText);
 
-    showInfoMsg('replaceOk');
+    showInfoMsg('convertOk');
 }
 
 
@@ -174,7 +155,47 @@ async function lineAddSameCharAtBothEnds(textEditor) {
 
     replaceSelectedText(textEditor, newText);
 
-    showInfoMsg('replaceOk');
+    showInfoMsg('convertOk');
+}
+
+
+//=============================================================================
+//    公共代码
+//=============================================================================
+
+/**
+ * 替换选中的文本
+ */
+function replaceSelectedText(textEditor, newText) {
+    textEditor.edit((builder) => {
+        //在原来行的后面，换一行后，再插入新的文本
+        // builder.insert(textEditor.selection.end, "\n");
+        // builder.insert(textEditor.selection.end, res);
+        // 替换为新的字符
+        builder.replace(textEditor.selection, newText);
+    });
+}
+
+/**
+ * 获取用户输入的分隔符
+ */
+async function getUserInputText() {
+    const message = i18n('pleaseUserInputText');
+
+    const separator = await vscode.window.showInputBox({ prompt: message, value: '' });
+    if (!separator) {
+        vscode.window.showErrorMessage(message);
+        return null;
+    }
+    return separator;
+}
+
+/**
+ * 普通提示
+ */
+function showInfoMsg(messageKey) {
+    const message = i18n(messageKey);
+    vscode.window.showInformationMessage(message);
 }
 
 
@@ -189,5 +210,6 @@ module.exports = {
     sortLinesRandom,
     lineAddQuoteCommaSeparator,
     lineAddDoubleQuoteCommaSeparator,
-    lineAddSameCharAtBothEnds
+    lineAddSameCharAtBothEnds,
+    insertSqlToMarkdown
 }
