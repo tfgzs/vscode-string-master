@@ -1,4 +1,4 @@
-English | [简体中文](README.zh-CN.md)
+[English](README.md) | 简体中文
 
 <h1 align="center">
     <img src="https://raw.githubusercontent.com/tfgzs/vscode-string-master/main/logo.png" height="64">
@@ -52,50 +52,48 @@ English | [简体中文](README.zh-CN.md)
         <img src="https://img.shields.io/github/workflow/status/tfgzs/vscode-string-master/build" alt="GitHub Workflow Status">
     </a> -->
 </h3>
-<p align="center">String manipulation, string master, right click </p>
-<p align="center"> Case transfer, delete empty lines, duplicate lines, merge lines, math... </p>
+<p align="center">字符串处理,字符串大师，右键操作</p>
+<p align="center" >转大小写，删除空行、重复行，合并行，数学计算……</p>
 
 
-## Features
+## 功能列表
 
-- Add character
-    - Add custom characters beginning and end
+- 添加字符
+    - 首尾增加自定义字符
 
-- Delete characters
-    - Delete empty lines
-    - Deletes duplicate lines
-    - Delete first and last whitespace characters
+- 删除字符
+    - 删除空行
+    - 删除重复行
+    - 删除首尾空白字符
 
-- Row sort
-    - Sort in ascending order
-    - Sort in descending order
-    - Randomize the order
+- 行排序
+    - 升序排列
+    - 降序排列
+    - 随机打乱顺序
 
-- Merge rows
-    - Multiple lines are converted to one line. User-defined delimiters are supported
-    - Add double quotation marks to each line, then merge it into a single line separated by commas
-    - Add single quotes to each line, then merge it into a single line separated by commas
+- 合并行
+    - 多行转成一行，支持自定义分隔符
+    - 每行加上双引号，然后用逗号分隔合并成一行
+    - 每行加上单引号，然后用逗号分隔合并成一行
     ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/1.gif)
 
-- SQL Tool
-    - Insert SQL converted to Markdown table
-    ![Insert SQL converted to Markdown table](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
+- SQL工具
+    - Insert SQL 转为 Markdown 表格
+    ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
 
-- Mathematical calculation
-    - Multiple lines sum
-    ![Multiple lines sum](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/3.gif)
+- 数学计算
+    - 多行求和
+    ![多行求和](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/3.gif)
 
+## 未来的想法
 
-## Future ideas
+- 增加管道流，用户可以自定义操作步骤
+- 增加正则表达式面板，用户可以保存自定义正则表达式
 
-There's a lot more neat ideas that _could_ be implemented, including:
-
-- Add a pipeline flow. Users can customize the operations
-- Add the Regular panel, allowing users to save customized regular expressions
 
 ## License
 
-This project's source code and documentation is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+该项目的源代码和文档是在MIT许可下授权的。详细信息请参见 [LICENSE](LICENSE) 文件.
 
 [Math.js]: https://mathjs.org
 [lodash.js]: https://lodash.com
