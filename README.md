@@ -1,7 +1,7 @@
 English | [简体中文](README.zh-CN.md)
 
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/tfgzs/vscode-string-master/main/logo.png" height="64">
+    <img src="https://gitee.com/tfgzs666/vscode-string-master/raw/main/logo.png" height="99">
     <br>String Master
 </h1>
 <h3 align="center">
@@ -75,16 +75,18 @@ English | [简体中文](README.zh-CN.md)
     - Multiple lines are converted to one line. User-defined delimiters are supported
     - Add double quotation marks to each line, then merge it into a single line separated by commas
     - Add single quotes to each line, then merge it into a single line separated by commas
+
     ![Alt text](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/1.gif)
 
 - SQL Tool
     - Insert SQL converted to Markdown table
+
     ![Insert SQL converted to Markdown table](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/2.gif)
 
 - Mathematical calculation
     - Multiple lines sum
-    ![Multiple lines sum](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/3.gif)
 
+    ![Multiple lines sum](https://gitee.com/tfgzs666/vscode-string-master/raw/main/docs/3.gif)
 
 ## Future ideas
 
@@ -93,9 +95,14 @@ There's a lot more neat ideas that _could_ be implemented, including:
 - Add a pipeline flow. Users can customize the operations
 - Add the Regular panel, allowing users to save customized regular expressions
 
+## Release Notes
+Please check [CHANGELOG](CHANGELOG.md)
+
 ## License
 
 This project's source code and documentation is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+
+## Special Thanks
 
 [Math.js]: https://mathjs.org
 [lodash.js]: https://lodash.com

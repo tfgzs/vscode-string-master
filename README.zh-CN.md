@@ -1,7 +1,7 @@
 [English](README.md) | 简体中文
 
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/tfgzs/vscode-string-master/main/logo.png" height="64">
+    <img src="https://gitee.com/tfgzs666/vscode-string-master/raw/main/logo.png" height="99">
     <br>String Master
 </h1>
 <h3 align="center">
@@ -90,10 +90,14 @@
 - 增加管道流，用户可以自定义操作步骤
 - 增加正则表达式面板，用户可以保存自定义正则表达式
 
+## 发行说明
+请查看[更新日志](CHANGELOG.md)
 
-## License
+## 许可证
 
 该项目的源代码和文档是在MIT许可下授权的。详细信息请参见 [LICENSE](LICENSE) 文件.
+
+## 特别鸣谢
 
 [Math.js]: https://mathjs.org
 [lodash.js]: https://lodash.com

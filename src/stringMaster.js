@@ -8,6 +8,7 @@ const sql2md = require('./sql2md');
 //    功能代码
 //=============================================================================
 
+// 把 Insert SQL 转换为 Markdown 表格
 async function insertSqlToMarkdown(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
