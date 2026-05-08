@@ -1,15 +1,15 @@
 {
-	"string-master.title": "String Tools",
-	"string-master.joinLines.title": "Join Lines",
+	"string-master.calcSumMultipleLines.title": "Calculate Sum of Multiple Lines",
 	"string-master.deleteBlankLines.title": "Delete Blank Lines",
-	"string-master.trimBlankLines.title": "Trim Blank Lines",
 	"string-master.deleteDuplicateLines.title": "Delete Duplicate Lines",
-	"string-master.sortLinesAsc.title": "Sort lines Asc",
-	"string-master.sortLinesDesc.title": "Sort lines Desc",
-	"string-master.sortLinesRandom.title": "Sort Lines Random",
-	"string-master.lineAddQuoteCommaSeparator.title": "Lines Add Quote Comma Separator",
-	"string-master.lineAddDoubleQuoteCommaSeparator.title": "Lines Add Double Quote Comma Separator",
-	"string-master.lineAddSameCharAtBothEnds.title": "Lines Add Same Char At Both Ends",
-	"string-master.insertSqlToMarkdown.title": "Insert Sql To Markdown Table",
-	"string-master.calcSumMultipleLines.title": "Calc Sum Multiple Lines"
+	"string-master.insertSqlToMarkdown.title": "Insert SQL to Markdown Table",
+	"string-master.joinLines.title": "Join Lines with Custom Separator",
+	"string-master.lineAddDoubleQuoteCommaSeparator.title": "Join Lines with Double Quotes and Commas",
+	"string-master.lineAddQuoteCommaSeparator.title": "Join Lines with Single Quotes and Commas",
+	"string-master.lineAddSameCharAtBothEnds.title": "Add Same Character at Both Ends",
+	"string-master.sortLinesAsc.title": "Sort Lines Ascending",
+	"string-master.sortLinesDesc.title": "Sort Lines Descending",
+	"string-master.sortLinesRandom.title": "Sort Lines Randomly",
+	"string-master.trimBlankLines.title": "Trim Leading and Trailing Whitespace",
+	"string-master.title": "String Master"
 }

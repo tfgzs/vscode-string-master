@@ -1,0 +1,16 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#0F3239",
+        "titleBar.activeBackground": "#16464F",
+        "titleBar.activeForeground": "#F4FBFC",
+        "titleBar.inactiveBackground": "#0F3239",
+        "titleBar.inactiveForeground": "#F4FBFC",
+        "statusBar.background": "#0F3239",
+        "statusBar.foreground": "#F4FBFC",
+        "statusBar.debuggingBackground": "#0F3239",
+        "statusBar.debuggingForeground": "#F4FBFC",
+        "statusBar.noFolderBackground": "#0F3239",
+        "statusBar.noFolderForeground": "#F4FBFC"
+    },
+    "editor.inlineSuggest.showToolbar": "onHover"
+}
