@@ -1,6 +1,10 @@
 'use strict';
 const vscode = require('vscode');
-const _ = require('lodash');
+const map = require('lodash/map');
+const trim = require('lodash/trim');
+const uniqWith = require('lodash/uniqWith');
+const isEqual = require('lodash/isEqual');
+const shuffle = require('lodash/shuffle');
 const i18n = require('./i18n').translation;
 const sql2md = require('./sql2md');
 
@@ -36,11 +40,11 @@ async function calcSumMultipleLines(textEditor) {
     //删除空白行
     let newText = oldText.replace(/^\s*\n/gm, '');
     //删除每行首尾空白字符
-    newText = _.map(newText.split('\n'), _.trim).join('\n');
+    newText = map(newText.split('\n'), trim).join('\n');
     //把字符串中的换行替换为逗号
     newText = newText.replace(/\n/g, '+');
     //计算结果
-    let result = eval(newText);
+    let result = safeCalculate(newText);
     //拼接最后结果
     newText = newText + '=' + result;
 
@@ -91,7 +95,7 @@ async function trimBlankLines(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
     //删除每行首尾空白字符
-    let newText = _.map(oldText.split('\n'), _.trim).join('\n');
+    let newText = map(oldText.split('\n'), trim).join('\n');
 
     replaceSelectedText(textEditor, newText);
     showInfoMsg('deleteOk');
@@ -102,7 +106,7 @@ async function deleteDuplicateLines(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
     //删除重复的行
-    const uniqueLines = _.uniqWith(oldText.split('\n'), _.isEqual);
+    const uniqueLines = uniqWith(oldText.split('\n'), isEqual);
     const newText = uniqueLines.join('\n');
 
     replaceSelectedText(textEditor, newText);
@@ -123,7 +127,7 @@ async function sortLinesDesc(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
     //降序
-    let newText = oldText.split('\n').reverse().join('\n');
+    let newText = oldText.split('\n').sort().reverse().join('\n');
 
     replaceSelectedText(textEditor, newText);
     showInfoMsg('convertOk');
@@ -133,7 +137,7 @@ async function sortLinesRandom(textEditor) {
     let oldText = textEditor.document.getText(textEditor.selection);
 
     const lines = oldText.split('\n'); // 将文本按行分割成数组
-    const shuffledLines = _.shuffle(lines); // 使用 lodash 的 shuffle 方法打乱数组顺序
+    const shuffledLines = shuffle(lines); // 使用 lodash 的 shuffle 方法打乱数组顺序
     const newText = shuffledLines.join('\n'); // 将打乱顺序的数组按行组合成文本
 
     replaceSelectedText(textEditor, newText);
@@ -178,7 +182,7 @@ async function lineAddSameCharAtBothEnds(textEditor) {
     }
 
     let lines = oldText.split('\n');
-    let resText = _.map(lines, (line) => {
+    let resText = map(lines, (line) => {
         return character + line + character;
     });
     let newText = resText.join('\n')
@@ -213,11 +217,25 @@ async function getUserInputText() {
     const message = i18n('pleaseUserInputText');
 
     const separator = await vscode.window.showInputBox({ prompt: message, value: '' });
-    if (!separator) {
-        vscode.window.showErrorMessage(message);
-        return null;
+    return separator || null;
+}
+
+/**
+ * 安全计算表达式。通过 Function 构造器创建沙箱环境，
+ * 注入 Math 对象以支持数学函数，同时阻断对 Node.js 全局对象的访问。
+ */
+function safeCalculate(expr) {
+    // 将 Math 对象的常用函数作为参数注入，防止通过作用域链访问 require/process 等危险对象
+    const sandboxKeys = Object.getOwnPropertyNames(Math);
+    const sandboxValues = sandboxKeys.map(k => Math[k]);
+    sandboxKeys.push('expr');
+    sandboxValues.push(expr);
+    const fn = new Function(sandboxKeys.join(','), 'return eval(expr)');
+    const result = fn.apply(null, sandboxValues);
+    if (!isFinite(result)) {
+        return 0;
     }
-    return separator;
+    return result;
 }
 
 /**

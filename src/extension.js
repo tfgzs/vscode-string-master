@@ -8,18 +8,25 @@ function activate(context) {
 	//此行代码只执行一次
 	console.log('Congratulations, your extension "string-master" is now active!');
 
-	registerCommand(context, 'string-master.joinLines', stringMaster.joinLines);
-	registerCommand(context, 'string-master.deleteBlankLines', stringMaster.deleteBlankLines);
-	registerCommand(context, 'string-master.trimBlankLines', stringMaster.trimBlankLines);
-	registerCommand(context, 'string-master.deleteDuplicateLines', stringMaster.deleteDuplicateLines);
-	registerCommand(context, 'string-master.sortLinesAsc', stringMaster.sortLinesAsc);
-	registerCommand(context, 'string-master.sortLinesDesc', stringMaster.sortLinesDesc);
-	registerCommand(context, 'string-master.sortLinesRandom', stringMaster.sortLinesRandom);
-	registerCommand(context, 'string-master.lineAddQuoteCommaSeparator', stringMaster.lineAddQuoteCommaSeparator);
-	registerCommand(context, 'string-master.lineAddDoubleQuoteCommaSeparator', stringMaster.lineAddDoubleQuoteCommaSeparator);
-	registerCommand(context, 'string-master.lineAddSameCharAtBothEnds', stringMaster.lineAddSameCharAtBothEnds);
-	registerCommand(context, 'string-master.insertSqlToMarkdown', stringMaster.insertSqlToMarkdown);
-	registerCommand(context, 'string-master.calcSumMultipleLines', stringMaster.calcSumMultipleLines);
+	//注册所有命令
+	const commands = [
+		'joinLines',
+		'deleteBlankLines',
+		'trimBlankLines',
+		'deleteDuplicateLines',
+		'sortLinesAsc',
+		'sortLinesDesc',
+		'sortLinesRandom',
+		'lineAddQuoteCommaSeparator',
+		'lineAddDoubleQuoteCommaSeparator',
+		'lineAddSameCharAtBothEnds',
+		'insertSqlToMarkdown',
+		'calcSumMultipleLines'
+	];
+
+	commands.forEach(cmd => {
+		registerCommand(context, 'string-master.' + cmd, stringMaster[cmd]);
+	});
 }
 
 /**

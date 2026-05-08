@@ -23,7 +23,6 @@
   "keywords": [
     "string",
     "string-master",
-    "string-master",
     "text",
     "csv",
     "excel",
@@ -34,7 +33,6 @@
     "underscore",
     "lodash"
   ],
-  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -109,69 +107,82 @@
       "editor/context": [
         {
           "group": "navigation",
-          "submenu": "string-master-menus"
+          "submenu": "string-master-menus",
+          "when": "editorHasSelection"
         }
       ],
       "string-master-menus": [
         {
           "title": "%string-master.deleteBlankLines.title%",
           "group": "1_del_lines",
-          "command": "string-master.deleteBlankLines"
+          "command": "string-master.deleteBlankLines",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.deleteDuplicateLines.title%",
           "group": "1_del_lines",
-          "command": "string-master.deleteDuplicateLines"
+          "command": "string-master.deleteDuplicateLines",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.trimBlankLines.title%",
           "group": "1_del_lines",
-          "command": "string-master.trimBlankLines"
+          "command": "string-master.trimBlankLines",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.sortLinesAsc.title%",
           "group": "40_sort_lines",
-          "command": "string-master.sortLinesAsc"
+          "command": "string-master.sortLinesAsc",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.sortLinesDesc.title%",
           "group": "40_sort_lines",
-          "command": "string-master.sortLinesDesc"
+          "command": "string-master.sortLinesDesc",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.sortLinesRandom.title%",
           "group": "40_sort_lines",
-          "command": "string-master.sortLinesRandom"
+          "command": "string-master.sortLinesRandom",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.joinLines.title%",
           "group": "30_join_lines",
-          "command": "string-master.joinLines"
+          "command": "string-master.joinLines",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.lineAddQuoteCommaSeparator.title%",
           "group": "30_join_lines",
-          "command": "string-master.lineAddQuoteCommaSeparator"
+          "command": "string-master.lineAddQuoteCommaSeparator",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.lineAddDoubleQuoteCommaSeparator.title%",
           "group": "30_join_lines",
-          "command": "string-master.lineAddDoubleQuoteCommaSeparator"
+          "command": "string-master.lineAddDoubleQuoteCommaSeparator",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.lineAddSameCharAtBothEnds.title%",
           "group": "20_fix_lines",
-          "command": "string-master.lineAddSameCharAtBothEnds"
+          "command": "string-master.lineAddSameCharAtBothEnds",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.insertSqlToMarkdown.title%",
           "group": "50_sql",
-          "command": "string-master.insertSqlToMarkdown"
+          "command": "string-master.insertSqlToMarkdown",
+          "when": "editorHasSelection"
         },
         {
           "title": "%string-master.calcSumMultipleLines.title%",
           "group": "60_calc",
-          "command": "string-master.calcSumMultipleLines"
+          "command": "string-master.calcSumMultipleLines",
+          "when": "editorHasSelection"
         }
       ]
     }
@@ -182,6 +193,9 @@
     "pretest": "yarn run lint",
     "test": "node ./test/runTest.js"
   },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
@@ -191,9 +205,7 @@
     "eslint": "^8.52.0",
     "fs-extra": "^11.1.1",
     "glob": "^10.3.10",
-    "lodash": "^4.17.21",
     "mocha": "^10.2.0",
-    "replace-in-file": "^7.0.2",
     "typescript": "^5.2.2"
   }
 }

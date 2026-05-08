@@ -1,15 +1,39 @@
 const assert = require('assert');
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 const vscode = require('vscode');
-// const myExtension = require('../extension');
 
 suite('Extension Test Suite', () => {
-	vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
-		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
+	test('extension should be present', () => {
+		const ext = vscode.extensions.getExtension('tfgzs.string-master');
+		assert.ok(ext);
 	});
+
+	test('extension should activate', async () => {
+		const ext = vscode.extensions.getExtension('tfgzs.string-master');
+		await ext.activate();
+		assert.strictEqual(ext.isActive, true);
+	});
+
+	test('all commands should be registered', async () => {
+		const allCommands = await vscode.commands.getCommands();
+		const commands = [
+			'string-master.joinLines',
+			'string-master.deleteBlankLines',
+			'string-master.trimBlankLines',
+			'string-master.deleteDuplicateLines',
+			'string-master.sortLinesAsc',
+			'string-master.sortLinesDesc',
+			'string-master.sortLinesRandom',
+			'string-master.lineAddQuoteCommaSeparator',
+			'string-master.lineAddDoubleQuoteCommaSeparator',
+			'string-master.lineAddSameCharAtBothEnds',
+			'string-master.insertSqlToMarkdown',
+			'string-master.calcSumMultipleLines'
+		];
+
+		commands.forEach(cmd => {
+			assert.ok(allCommands.includes(cmd), `Command ${cmd} should be registered`);
+		});
+	});
+
 });
